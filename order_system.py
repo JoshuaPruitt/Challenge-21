@@ -28,9 +28,10 @@ def place_order(menu):
     print("Welcome to the Generic Take Out Restaurant.")
 
     # TODO: Create a continuous while loop so customers can order multiple items
+    while menu:
 
         # TODO: Ask the customer what they want to order
-
+        print("What do you wish to order on the menu? ")
 
         # Create a variable for the menu item number
         i = 1
@@ -39,11 +40,16 @@ def place_order(menu):
         print_menu_heading()
 
         # TODO: Loop through the menu dictionary
+        for food_category, options in menu.items():
         # TODO: Extract the food category and the options for each category
+            # print(f"Options: {options}")
+            # print(f"Food Category: {food_category}")
 
+            for meal, price in options.items():
             # TODO: Loop through the options for each food category
             # TODO: Extract the meal and the price for each option
-
+                # print(f"Meal: {meal}")
+                # print(f"Price: {price}")
                 # Print the menu item number, food category, meal, and price
                 # TODO: Only if you used different variable names
                 # TODO: Update the variable names in the following function
@@ -53,9 +59,10 @@ def place_order(menu):
                 i += 1
 
         # TODO: Ask customer to input menu item number
-
+        menu_item_number = int(input("What is the number of the menu item you wish to pick? "))
 
         # TODO: Update the order list using the update_order function
+        update_order(menu_item_number, menu_item_number, order)
         # TODO: Send the order list, menu selection, and menu items as arguments
 
 
@@ -101,14 +108,15 @@ def update_order(order, menu_selection, menu_items):
                     and quantity ordered (updated as needed).
     """
     # TODO: Check if the customer typed a number
-
+    if menu_selection.exists() :
         # TODO: Convert the menu selection to an integer
-
+        menu_selection_int = int(menu_selection)
 
         # TODO: Check if the menu selection is in the menu items keys
+        if menu_selection_int in menu_items:
 
             # TODO: Store the item name as a variable
-
+            item_name = menu_items
 
             # TODO: Ask the customer for the quantity of the menu item
             # TODO: Use the item name variable in the question
@@ -145,11 +153,13 @@ def print_itemized_receipt(receipt):
     #print(receipt)
 
     # TODO: Loop through the items in the customer's receipt
+    for items in receipt:
 
         # TODO Store the dictionary items as variables
 
 
         # TODO: Print the receipt line using the print_receipt_line function
+        print_receipt_line()
         # TODO: Send the item name, price, and quantity as separate arguments
 
 
