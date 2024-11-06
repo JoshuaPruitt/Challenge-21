@@ -68,26 +68,41 @@ def place_order(menu):
 
         # TODO: Ask the customer if they would like to order anything else
         # TODO: Let the customer know if they should type 'n' or 'N' to quit
+        loop_choice = input('Would you like to order anything else? (Y/N)')
 
-
+        while_choice = False
         # TODO: Write a conditional statement that checks the user's input
         # TODO: The conditional statement should check for 'n' or 'N'
+        while while_choice == False:
+            if loop_choice == 'n' | "N":
 
-            # TODO: Write a print statement that thanks the customer for their order
+                # TODO: Write a print statement that thanks the customer for their order
+                print("Thanks for ordering with us!")
 
+                # TODO: Use list comprehension to create a list called prices_list,
+                # TODO: which contains the total prices for each item in the order list:
+                # TODO: The total price for each item should multiply the price by quantity
 
-            # TODO: Use list comprehension to create a list called prices_list,
-            # TODO: which contains the total prices for each item in the order list:
-            # TODO: The total price for each item should multiply the price by quantity
+                prices_list = []
+                for name, price, quantity in order:
+                    prices_list.append(price * quantity)
+           
 
+                # TODO: Create an order_total from the prices list using sum()
+                # TODO: Round the prices to 2 decimal places.
+                order_total = int((f"{sum(prices_list):.2f}"))
+                
+                # TODO: Exit the ordering loop
+                # TODO: Either use a break statement or set the condition to False
+                while_choice == True
+                break
 
-            # TODO: Create an order_total from the prices list using sum()
-            # TODO: Round the prices to 2 decimal places.
-
-
-            # TODO: Exit the ordering loop
-            # TODO: Either use a break statement or set the condition to False
-
+            elif loop_choice == 'y' | 'Y':
+                #exit the choice loop.
+                while_choice = True
+            
+            else: 
+                print("Please type either 'y' or 'n' to choose")
 
     # TODO: Return the order list and the order total
 
