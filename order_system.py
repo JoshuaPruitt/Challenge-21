@@ -91,15 +91,7 @@ def place_order(menu):
                 
             # TODO: Exit the ordering loop
             # TODO: Either use a break statement or set the condition to False
-            while_choice = True
             break
-
-        elif loop_choice == "y" or loop_choice == "Y":
-            #exit the choice loop.
-            while_choice = True
-            
-        else: 
-            print("Please type either 'y' or 'n' to choose")
 
     # TODO: Return the order list and the order total
     return order, order_total
